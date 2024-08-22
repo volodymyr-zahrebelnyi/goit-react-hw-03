@@ -1,5 +1,7 @@
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useId } from "react";
 import { nanoid } from "nanoid";
+import * as Yup from "yup";
 import css from "./ContactForm.module.css";
 
 export default function ContactForm({ onAddContact }) {
@@ -29,3 +31,24 @@ export default function ContactForm({ onAddContact }) {
     </form>
   );
 }
+
+// const nameFieldId = useId();
+// const numberFieldId = useId();
+
+// return (
+//   <Formik>
+//     <Form>
+//       <div>
+//         <label htmlFor={nameFieldId}>Name</label>
+//         <Field type="text" name="name" id={nameFieldId}></Field>
+//       </div>
+//       <div>
+//         <label htmlFor={numberFieldId}>Number</label>
+//         <Field type="text" name="name" id={numberFieldId}></Field>
+//       </div>
+//       <button className={css.btn} type="submit">
+//         Add contact
+//       </button>
+//     </Form>
+//   </Formik>
+// );
