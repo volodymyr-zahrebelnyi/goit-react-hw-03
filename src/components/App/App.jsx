@@ -8,10 +8,15 @@ import ContactList from "../ContactList/ContactList";
 
 const getInitialContacts = () => {
   const savedContacts = window.localStorage.getItem("savedContacts");
-  return savedContacts && JSON.parse(savedContacts).length > 0
-    ? JSON.parse(savedContacts)
-    : initialContacts;
+  return savedContacts !== null ? JSON.parse(savedContacts) : initialContacts;
 };
+
+// const getInitialContacts = () => {
+//   const savedContacts = window.localStorage.getItem("savedContacts");
+//   return savedContacts && JSON.parse(savedContacts).length > 0
+//     ? JSON.parse(savedContacts)
+//     : initialContacts;
+// };
 
 export default function App() {
   const [contacts, setContacts] = useState(getInitialContacts);
